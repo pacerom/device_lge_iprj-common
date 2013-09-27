@@ -67,6 +67,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/audio_policy.conf:system/vendor/etc/audio_policy.conf
 
+# SIP+VoIP
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+
 PRODUCT_PACKAGES += \
     hdmid \
     libgenlock \
@@ -103,6 +107,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger \
     charger_res_images
+
+# Extra stuff
+PRODUCT_PACKAGES += \
+    CellBroadcastReceiver \
+    Development
 
 # Common properties
 PRODUCT_PROPERTY_OVERRIDES += \
