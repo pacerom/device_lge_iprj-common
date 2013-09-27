@@ -71,6 +71,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
+# Superuser
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/init.su.sh:system/etc/init.su.sh
+
 PRODUCT_PACKAGES += \
     hdmid \
     libgenlock \

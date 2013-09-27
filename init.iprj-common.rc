@@ -170,6 +170,12 @@ service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
     disabled
     oneshot
 
+service su-daemon /system/bin/sh /system/etc/init.su.sh
+    class main
+    user root
+    disabled
+    oneshot
+
 service kickstart /system/bin/qcks l
     class core
     user system
@@ -190,6 +196,7 @@ service mdm_script3 /system/bin/sh /system/etc/init.qcom.baseband.sh
 on property:dev.bootcomplete=1
     start mdm_script3
     start qcom-post-boot
+    start su-daemon
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
