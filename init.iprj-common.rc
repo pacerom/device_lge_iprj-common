@@ -86,12 +86,10 @@ on fs
 
 service mdm_script1 /system/bin/sh /system/etc/init.qcom.modem_links.sh
     class modem
-    seclabel u:r:kickstart:s0
     oneshot
 
 service mdm_script2 /system/bin/sh /system/etc/init.qcom.mdm_links.sh
     class modem
-    seclabel u:r:kickstart:s0
     oneshot
 
 on post-fs
@@ -177,7 +175,6 @@ service kickstart /system/bin/qcks l
     user system
     group system
     oneshot
-    seclabel u:r:kickstart:s0
     disabled
 
 # Start kickstart if csfb or svlte2a target
@@ -188,7 +185,6 @@ on property:ro.baseband=csfb
     start kickstart
 
 service mdm_script3 /system/bin/sh /system/etc/init.qcom.baseband.sh
-    seclabel u:r:kickstart:s0
     oneshot
 
 on property:dev.bootcomplete=1
