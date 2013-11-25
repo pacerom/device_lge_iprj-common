@@ -28,9 +28,6 @@
 
     <bool name="config_automatic_brightness_available">true</bool>
 
-    <!-- Device supports LED flashlight -->
-    <bool name="config_enableTorch">true</bool>
-
     <!-- These are all dummies, but need to be present to enable UI control of auto-brightness
                   The actual control and values are all in-kernel -->
     <integer-array name="config_autoBrightnessLevels">
@@ -147,6 +144,4 @@
         <item>"2,1"</item>
         <item>"7,1"</item>
     </string-array>
-
-    <integer name="config_deviceHardwareKeys">7</integer>
 </resources>
